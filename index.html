@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>张明的个人简历</title>
+    <!-- 引入 Font Awesome 图标库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind 配置 -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2563eb',
+              secondary: '#7c3aed',
+            },
+            fontFamily: {
+              inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .text-gradient {
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .transition-transform {
+          transition-property: transform;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 150ms;
+        }
+        .hover\:scale-105:hover {
+          transform: scale(1.05);
+        }
+        .hover\:-translate-y-1:hover {
+          transform: translateY(-0.25rem);
+        }
+      }
+    </style>
+    <style>
+      /* 全局样式 */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.5;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* 深色模式样式 */
+      .dark {
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="text-xl font-bold text-blue-600 dark:text-blue-400">
+          <i class="fa-solid fa-code mr-2"></i>
+          张明的个人主页
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">关于我</a>
+          <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">技能</a>
+          <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">项目</a>
+          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">联系我</a>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <button 
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+            aria-label="切换主题"
+            id="theme-toggle"
+          >
+            <i class="fa-regular fa-sun" id="theme-icon"></i>
+          </button>
+          
+          <button 
+            class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+            aria-label="菜单"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- 英雄区域 -->
+      <section class="py-20 px-4">
+        <div class="container mx-auto max-w-5xl">
+          <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+              <img 
+                src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Professional%20portrait%20of%20a%20software%20developer&sign=85dad374aa53fbfd05fbee8d688b6540" 
+                alt="张明的照片" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 text-gradient">
+                张明
+              </h1>
+              <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6">
+                高级前端开发者
+              </h2>
+              <p class="text-lg mb-8 max-w-2xl">
+                专注于创建优雅、高效的用户界面和体验，热衷于学习和探索新技术。
+              </p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a 
+                  href="#contact" 
+                  class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-md hover:shadow-lg flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                  联系我
+                </a>
+                <a 
+                  href="#projects" 
+                  class="px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg border border-gray-300 dark:border-gray-700 transition-colors shadow-sm hover:shadow flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-briefcase"></i>
+                  查看项目
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 技能区域 -->
+      <section id="skills" class="py-16 px-4 bg-white dark:bg-gray-900">
+        <div class="container mx-auto max-w-5xl">
+          <h2 class="text-3xl font-bold mb-12 text-center">我的技能</h2>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+            <div class="py-6 px-4 bg-gray-50 dark:bg-gray-800 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="font-medium">React</span>
+            </div>
+            <div class="py-6 px-4 bg-gray-50 dark:bg-gray-800 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="font-medium">TypeScript</span>
+            </div>
+            <div class="py-6 px-4 bg-gray-50 dark:bg-gray-800 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="font-medium">Tailwind CSS</span>
+            </div>
+            <div class="py-6 px-4 bg-gray-50 dark:bg-gray-800 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="font-medium">Node.js</span>
+            </div>
+            <div class="py-6 px-4 bg-gray-50 dark:bg-gray-800 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="font-medium">UI/UX设计</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 项目区域 -->
+      <section id="projects" class="py-16 px-4">
+        <div class="container mx-auto max-w-5xl">
+          <h2 class="text-3xl font-bold mb-12 text-center">我的项目</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+              <div class="h-48 overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=E-commerce%20website%20interface%20design&sign=5874ffa96d7d06a3e918658e575ba9cf" 
+                  alt="电商平台重构"
+                  class="w-full h-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-3">电商平台重构</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">使用React和TypeScript重构了传统电商平台，提升了用户体验和性能</p>
+                <a 
+                  href="#" 
+                  class="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                >
+                  查看详情
+                  <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+              <div class="h-48 overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Data%20analysis%20dashboard%20interface&sign=923791e94475b61844ef0ce268a667b5" 
+                  alt="数据分析仪表板"
+                  class="w-full h-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-3">数据分析仪表板</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">开发了响应式数据可视化仪表板，帮助用户实时监控业务指标</p>
+                <a 
+                  href="#" 
+                  class="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                >
+                  查看详情
+                  <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+              <div class="h-48 overflow-hidden">
+                <img 
+                  src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Mobile%20app%20frontend%20design&sign=5c4a1db0a3c3efa8939057102c8c88b1" 
+                  alt="移动应用前端"
+                  class="w-full h-full object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-3">移动应用前端</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">为健康追踪应用构建了跨平台前端，支持iOS和Android</p>
+                <a 
+                  href="#" 
+                  class="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                >
+                  查看详情
+                  <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 联系区域 -->
+      <section id="contact" class="py-16 px-4 bg-white dark:bg-gray-900">
+        <div class="container mx-auto max-w-5xl">
+          <h2 class="text-3xl font-bold mb-12 text-center">联系我</h2>
+          <div class="max-w-md mx-auto">
+            <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm">
+              <form class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2">姓名</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+                    placeholder="您的姓名"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2">邮箱</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+                    placeholder="您的邮箱"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2">留言</label>
+                  <textarea 
+                    id="message" 
+                    rows="4"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+                    placeholder="请输入您的留言内容"
+                  ></textarea>
+                </div>
+                <button 
+                  type="button"
+                  class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-md hover:shadow-lg"
+                  onclick="alert('感谢您的留言！这是一个静态页面，消息暂无法实际发送。')"
+                >
+                  发送消息
+                </button>
+              </form>
+              
+              <div class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-medium mb-4">其他联系方式</h3>
+                <div class="flex justify-center gap-6">
+                  <a href="mailto:zhangming@example.com" class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors text-gray-700 dark:text-gray-300">
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                  <a href="https://github.com/your-github-username" class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors text-gray-700 dark:text-gray-300">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/zhangming" class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors text-gray-700 dark:text-gray-300">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a href="https://twitter.com/zhangming" class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors text-gray-700 dark:text-gray-300">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {/* 页脚 */}
+    <footer class="bg-gray-900 text-white py-10 px-4">
+      <div class="container mx-auto max-w-5xl">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="text-xl font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-code mr-2"></i>
+              张明的个人主页
+            </div>
+            <p class="text-gray-400 text-sm">
+              高级前端开发者 | 热衷于创建优雅、高效的用户界面和体验
+            </p>
+          </div>
+          
+          <div class="flex flex-col items-center md:items-end">
+            <p class="text-gray-400 text-sm mb-4">
+              © 2025 张明. 保留所有权利.
+            </p>
+            <div class="flex gap-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-user mr-1"></i> 关于
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-file-alt mr-1"></i> 隐私政策
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // 主题切换功能
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      
+      // 检查用户偏好或本地存储的主题
+      if (localStorage.getItem('theme') === 'dark' || 
+          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+      
+      // 主题切换事件
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        } else {
+          localStorage.setItem('theme', 'light');
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        }
+      });
+      
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
